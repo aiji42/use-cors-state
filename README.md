@@ -19,6 +19,9 @@ yarn add use-cors-state
 ### Example for synchronizing state between different windows (e.g. iframe)
 ```jsx
 // a componet in parent window
+import React from 'react'
+import { useCorsState } from 'use-cors-state'
+
 const ExampleComponentParentWindow = ({ targetIframe }) => {
   const [state, setState] = useCorsState('example', { window: targetIframe.contentWindow }, '')
   return (
@@ -31,6 +34,9 @@ const ExampleComponentParentWindow = ({ targetIframe }) => {
 
 ```jsx
 // a componet in child window
+import React from 'react'
+import { useCorsState } from 'use-cors-state'
+
 const ExampleComponentChildWindow = () => {
   const [state, setState] = useCorsState('example', { window: window.parent }, '')
   return (
