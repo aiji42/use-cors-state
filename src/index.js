@@ -1,21 +1,22 @@
-import * as React from 'react'
+import { useState, useEffect, useRef } from 'react'
+import postRobot from 'post-robot'
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState({
-    counter: 0
-  })
+export const useCorsState = (synchronizingKey, targetOring = { window }, initialValue) => {
+  const [state, setState] = useState(initialValue)
+  const sendable = useRef(true)
 
-  React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter++
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval)
-    }
+  useEffect(() => {
+    const literner = postRobot.on(synchronizingKey, targetOring, ({ data }) => {
+      sendable.current = false
+      setState(data)
+    })
+    return () => literner.cancel()
   }, [])
 
-  return counter
+  useEffect(() => {
+    sendable.current && postRobot.send(targetOring.window, synchronizingKey, state)
+    sendable.current = true
+  }, [state])
+
+  return [state, setState]
 }

@@ -1,29 +1,38 @@
-import { useMyHook } from './'
+import { useCorsState } from './'
 import { renderHook, act } from "@testing-library/react-hooks";
+import postRobot from 'post-robot'
 
-// mock timer using jest
-jest.useFakeTimers();
+describe('useCorsState', () => {
+  it('initial value is set correctly', () => {
+    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'));
+    expect(result.current[0]).toBe('initialValue')
+  })
 
-describe('useMyHook', () => {
-  it('updates every second', () => {
-    const { result } = renderHook(() => useMyHook());
-
-    expect(result.current).toBe(0);
-
-    // Fast-forward 1sec
+  it('the value can be set with setState', () => {
+    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'));
     act(() => {
-      jest.advanceTimersByTime(1000);
-    });
+      result.current[1]('updatedValue')
+    })
+    expect(result.current[0]).toBe('updatedValue')
+  })
 
-    // Check after total 1 sec
-    expect(result.current).toBe(1);
-
-    // Fast-forward 1 more sec
+  it('a message event fires when setState is executed', () => {
+    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'));
     act(() => {
-      jest.advanceTimersByTime(1000);
-    });
+      let counter = 0
+      window.addEventListener('message', ({ data }) => {
+        const parsedData = JSON.parse(data)
+        expect(Object.values(parsedData)[0].name).toBe('test')
+        if (counter == 0) expect(Object.values(parsedData)[0].data).toBe('initialValue')
+        if (counter == 1) expect(Object.values(parsedData)[0].data).toBe('updatedValue')
+        counter += 1
+      })
+      result.current[1]('updatedValue')
+    })
+  })
 
-    // Check after total 2 sec
-    expect(result.current).toBe(2);
+  it('synchronize when a message event is fired', () => {
+    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'));
+    postRobot.send(window, 'test', 'updatedValue').then(() => expect(result.current[0]).toBe('updatedValue'))
   })
 })

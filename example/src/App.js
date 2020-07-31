@@ -1,12 +1,14 @@
 import React from 'react'
-import { useMyHook } from 'use-cors-state'
+import { useCorsState } from 'use-cors-state'
 
-const App = () => {
-  const example = useMyHook()
+const App = ({ targetWindow }) => {
+  const [state, setState] = useCorsState('example', { window: targetWindow }, '')
   return (
     <div>
-      {example}
+      <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
+      <p>Synchronized!!: {state}</p>
     </div>
   )
 }
+
 export default App
