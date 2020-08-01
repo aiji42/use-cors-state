@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 
-
 if (window.parent === window) {
   const iframe = document.createElement('iframe')
   iframe.src = '/'

@@ -11,12 +11,12 @@ export const useCorsState = (synchronizingKey, targetOring = { window }, initial
       setState(data)
     })
     return () => literner.cancel()
-  }, [])
+  }, [synchronizingKey, targetOring])
 
   useEffect(() => {
     sendable.current && postRobot.send(targetOring.window, synchronizingKey, state)
     sendable.current = true
-  }, [state])
+  }, [state, synchronizingKey, targetOring.window])
 
   return [state, setState]
 }
