@@ -4,12 +4,12 @@ import postRobot from 'post-robot'
 
 describe('useCorsState', () => {
   it('initial value is set correctly', () => {
-    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'))
+    const { result } = renderHook(() => useCorsState('test1', { window }, 'initialValue'))
     expect(result.current[0]).toBe('initialValue')
   })
 
   it('the value can be set with setState', () => {
-    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'))
+    const { result } = renderHook(() => useCorsState('test2', { window }, 'initialValue'))
     act(() => {
       result.current[1]('updatedValue')
     })
@@ -17,22 +17,24 @@ describe('useCorsState', () => {
   })
 
   it('a message event fires when setState is executed', () => {
-    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'))
+    const { result } = renderHook(() => useCorsState('test3', { window }, 'initialValue'))
+
     act(() => {
       let counter = 0
-      window.addEventListener('message', ({ data }) => {
+      const example = ({ data }) => {
         const parsedData = JSON.parse(data)
-        expect(Object.values(parsedData)[0].name).toBe('test')
+        if (Object.values(parsedData)[0].name !== 'test3') return
         if (counter === 0) expect(Object.values(parsedData)[0].data).toBe('initialValue')
         if (counter === 1) expect(Object.values(parsedData)[0].data).toBe('updatedValue')
         counter += 1
-      })
+      }
+      window.addEventListener('message', example)
       result.current[1]('updatedValue')
     })
   })
 
   it('synchronize when a message event is fired', () => {
-    const { result } = renderHook(() => useCorsState('test', { window }, 'initialValue'))
-    postRobot.send(window, 'test', 'updatedValue').then(() => expect(result.current[0]).toBe('updatedValue')).catch((e) => { throw e })
+    const { result } = renderHook(() => useCorsState('test4', { window }, 'initialValue'))
+    postRobot.send(window, 'test4', 'updatedValue').then(() => expect(result.current[0]).toBe('updatedValue')).catch((e) => { throw e })
   })
 })
