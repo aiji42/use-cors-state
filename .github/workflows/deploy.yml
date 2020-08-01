@@ -8,7 +8,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: predeploy # will run `yarn predeploy` command
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: deploy # will run `yarn deploy` command
+          cmd: NODE_ENV=development deploy # will run `yarn deploy` command
