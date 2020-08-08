@@ -6,7 +6,7 @@ import App from './App'
 
 if (window.parent === window) {
   const iframe = document.createElement('iframe')
-  iframe.src = '/'
+  iframe.src = '/use-cors-state/'
   document.body.appendChild(iframe)
   ReactDOM.render(<App targetWindow={iframe.contentWindow} />, document.getElementById('root'))
 } else {
