@@ -14,6 +14,10 @@ npm install --save use-cors-state
 yarn add use-cors-state
 ```
 
+## DEMO
+
+https://aiji42.github.io/use-cors-state/
+
 ## Usage
 
 ### Example for synchronizing state between different windows (e.g. iframe)
@@ -51,10 +55,10 @@ When setState is executed, the state is synchronized between both windows.
 
 Synchronization is possible from both sides, not only from parent to child, but also from child to parent.
 
-## useCorsState
+## API
 
 ```js
-useCorsState(synchronizingKey, { window, domain }, initialValue)
+const [state, setState] = useCorsState(synchronizingKey, { window, domain }, initialValue)
 ```
 - __synchronizingKey__: required
     - Set the same key between components.
