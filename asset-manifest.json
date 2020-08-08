@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/use-cors-state/static/css/main.2c6a48fe.chunk.css",
-    "main.js": "/use-cors-state/static/js/main.a244d037.chunk.js",
-    "main.js.map": "/use-cors-state/static/js/main.a244d037.chunk.js.map",
+    "main.js": "/use-cors-state/static/js/main.a9d16f19.chunk.js",
+    "main.js.map": "/use-cors-state/static/js/main.a9d16f19.chunk.js.map",
     "runtime-main.js": "/use-cors-state/static/js/runtime-main.f372a22f.js",
     "runtime-main.js.map": "/use-cors-state/static/js/runtime-main.f372a22f.js.map",
     "static/js/2.04a1fff9.chunk.js": "/use-cors-state/static/js/2.04a1fff9.chunk.js",
     "static/js/2.04a1fff9.chunk.js.map": "/use-cors-state/static/js/2.04a1fff9.chunk.js.map",
     "index.html": "/use-cors-state/index.html",
-    "precache-manifest.478b10002a9aed80bb7f15c260cf9416.js": "/use-cors-state/precache-manifest.478b10002a9aed80bb7f15c260cf9416.js",
+    "precache-manifest.e0314c8936b960c70ef502e42a3efaf6.js": "/use-cors-state/precache-manifest.e0314c8936b960c70ef502e42a3efaf6.js",
     "service-worker.js": "/use-cors-state/service-worker.js",
     "static/css/main.2c6a48fe.chunk.css.map": "/use-cors-state/static/css/main.2c6a48fe.chunk.css.map",
     "static/js/2.04a1fff9.chunk.js.LICENSE.txt": "/use-cors-state/static/js/2.04a1fff9.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f372a22f.js",
     "static/js/2.04a1fff9.chunk.js",
     "static/css/main.2c6a48fe.chunk.css",
-    "static/js/main.a244d037.chunk.js"
+    "static/js/main.a9d16f19.chunk.js"
   ]
 }

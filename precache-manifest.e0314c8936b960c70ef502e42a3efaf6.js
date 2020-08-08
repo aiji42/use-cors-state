@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3eec59f898d3343d512535b11313c6e8",
+    "revision": "80d87e841638a945def30dbedd0af95b",
     "url": "/use-cors-state/index.html"
   },
   {
-    "revision": "8f1e31870746acf724e7",
+    "revision": "319275e4fb2de61a9561",
     "url": "/use-cors-state/static/css/main.2c6a48fe.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/use-cors-state/static/js/2.04a1fff9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8f1e31870746acf724e7",
-    "url": "/use-cors-state/static/js/main.a244d037.chunk.js"
+    "revision": "319275e4fb2de61a9561",
+    "url": "/use-cors-state/static/js/main.a9d16f19.chunk.js"
   },
   {
     "revision": "cdd803ee18070fb0543c",
