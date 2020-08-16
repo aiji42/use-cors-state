@@ -27,10 +27,10 @@
     "react": "^16.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.11.1",
     "@babel/runtime": "^7.11.2",
-    "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-url": "^5.0.0",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/jest": "^26.0.10",
@@ -42,22 +42,22 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-standard": "^4.0.0",
     "gh-pages": "^3.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "react": "^16.9.0",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "^3.4.3",
     "react-test-renderer": "^16.9.0",
-    "rollup": "^2.0.0",
+    "rollup": "^2.26.2",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.27.2",
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "post-robot": "^10.0.37"
+    "post-robot": "^10.0.39"
   },
   "husky": {
     "hooks": {
