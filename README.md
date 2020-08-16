@@ -2,7 +2,7 @@
 
 > Custom hooks for synchronizing state between different components, different windows, and cross-domains.
 
-[![NPM](https://img.shields.io/npm/v/use-cors-state.svg)](https://www.npmjs.com/package/use-cors-state) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Build Status](https://travis-ci.org/aiji42/use-cors-state.svg?branch=master)](https://travis-ci.org/aiji42/use-cors-state)
+[![NPM](https://img.shields.io/npm/v/use-cors-state.svg)](https://www.npmjs.com/package/use-cors-state) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Build Status](https://travis-ci.org/aiji42/use-cors-state.svg?branch=master)](https://travis-ci.org/aiji42/use-cors-state) [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
 ## Install
 
@@ -58,16 +58,33 @@ Synchronization is possible from both sides, not only from parent to child, but 
 ## API
 
 ```js
-const [state, setState] = useCorsState(synchronizingKey, { window, domain }, initialValue)
+const [state, setState] = useCorsState(synchronizingKey, options, initialValue)
 ```
-- __synchronizingKey__: required
+- __synchronizingKey:__ `string`
     - Set the same key between components.
-- __window__: optional (Default value is self window)
-    - The window in which the opponent's component exists.
-- __domain__: optional
-    - This value can be used to restrict the domain.
-- __initialValue__: optional
+- __options:__ `OptionsType | undefined`
+    - __window__: optional (Default value is self window)
+        - The window in which the opponent's component exists.
+    - __domain__: optional
+        - This value can be used to restrict the domain.
+    - See "OptionsType" below for more information.
+- __initialValue:__ `any`
     - Initial value of the state.
+
+#### OptionsType
+```ts
+// Server
+// Loosely based on: https://github.com/krakenjs/post-robot/blob/master/src/public/server.js
+type OptionsType = {
+  handler?: (err: any) => void,
+  errorHandler?: ({ source: Window, origin: string, data: Object }) => (void | any | ZalgoPromise<any>),
+  window?: Window,
+  name?: string,
+  domain?: (string | RegExp | Array<string>),
+  once?: boolean,
+  errorOnClose?: boolean
+};
+```
 
 ### Example
 ```js

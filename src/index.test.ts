@@ -21,8 +21,8 @@ describe('useCorsState', () => {
 
     act(() => {
       let counter = 0
-      const example = ({ data }) => {
-        const parsedData = JSON.parse(data)
+      const example = ({ data }: MessageEvent) => {
+        const parsedData: {[k: string]: any} = JSON.parse(data)
         if (Object.values(parsedData)[0].name !== 'test3') return
         if (counter === 0) expect(Object.values(parsedData)[0].data).toBe('initialValue')
         if (counter === 1) expect(Object.values(parsedData)[0].data).toBe('updatedValue')
