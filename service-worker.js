@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/use-cors-state/precache-manifest.89c88519e7c9338a64ede687d1260bd4.js"
+  "/use-cors-state/precache-manifest.f7bb08e957df96eee39ecc19489fa22d.js"
 );
 
 self.addEventListener('message', (event) => {
