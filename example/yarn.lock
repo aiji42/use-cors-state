@@ -7629,10 +7629,10 @@ posix-character-classes@^0.1.0:
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
 
-post-robot@^10.0.37:
-  version "10.0.37"
-  resolved "https://registry.yarnpkg.com/post-robot/-/post-robot-10.0.37.tgz#f8c9c1bba7a42973c7d5df346ca274be3e83eb22"
-  integrity sha512-d1EvdFBDv95+I/MsG95OMmwTQXNGqOgvqy7XzZ7ywDehjyDeetwjAbrHc5FbfeZpgZezDpPfjjIB/hQKc80MEg==
+post-robot@^10.0.39:
+  version "10.0.39"
+  resolved "https://registry.yarnpkg.com/post-robot/-/post-robot-10.0.39.tgz#04ce17c0dc1e3a4225e03ead065cf87832725861"
+  integrity sha512-6X/Rb1mBEko4rfCugQm4IdV6fUBN+re1dOQRa/yU4PRFt4J0gy/m4UPAPikBsg7jO/Ob4eQ30klvStx2UOcDWA==
   dependencies:
     belter "^1.0.41"
     cross-domain-safe-weakmap "^1.0.1"
